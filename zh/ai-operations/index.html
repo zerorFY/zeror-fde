@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>项目进展 — Zeror</title>
+<meta name="description" content="哪些 AI 辅助和自动化流程已在生产中运行、哪些已测试、哪些还只是设计——如实标注。">
+<link rel="canonical" href="https://fde.zeror.ca/zh/ai-operations/">
+<link rel="alternate" hreflang="en" href="https://fde.zeror.ca/ai-operations/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fde.zeror.ca/zh/ai-operations/">
+<link rel="alternate" hreflang="x-default" href="https://fde.zeror.ca/ai-operations/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zeror">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="项目进展 — Zeror">
+<meta property="og:description" content="哪些 AI 辅助和自动化流程已在生产中运行、哪些已测试、哪些还只是设计——如实标注。">
+<meta property="og:url" content="https://fde.zeror.ca/zh/ai-operations/">
+<meta property="og:image" content="https://fde.zeror.ca/assets/og-workflow-reconstruction.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Zeror — Workflow Reconstruction">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fde.zeror.ca/assets/og-workflow-reconstruction.png">
+<meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121412" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/zeror-icon-512.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,600..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebPage",
+ "url": "https://fde.zeror.ca/zh/ai-operations/",
+ "name": "项目进展 — Zeror",
+ "description": "哪些 AI 辅助和自动化流程已在生产中运行、哪些已测试、哪些还只是设计——如实标注。",
+ "inLanguage": "zh-Hans",
+ "isPartOf": {
+  "@id": "https://fde.zeror.ca/#website"
+ }
+}
+</script>
+
+</head>
+<body class="lang-zh kind-page">
+<a class="skip" href="#main">跳到正文</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/zh/"><img src="/assets/zeror-mark.png" alt="" width="38" height="24"><span>Zeror</span></a>
+    <nav class="nav" aria-label="网站"><a href="/zh/services/">服务</a><a href="/zh/cases/">案例</a><a href="/zh/how-we-work/">工作方法</a><a href="/zh/about/">关于</a></nav>
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="语言"><a href="/ai-operations/" hreflang="en" lang="en">EN</a><a href="/zh/ai-operations/" hreflang="zh-Hans" lang="zh-Hans" aria-current="true">中文</a></div>
+      <a class="btn btn-primary btn-sm header-cta" href="/zh/contact/">聊聊你的需求</a>
+      <details class="mobile-menu">
+        <summary>菜单</summary>
+        <nav class="mobile-panel" aria-label="菜单"><a href="/zh/services/">服务</a><a href="/zh/cases/">案例</a><a href="/zh/how-we-work/">工作方法</a><a href="/zh/about/">关于</a><a class="btn btn-primary" href="/zh/contact/">聊聊你的需求</a></nav>
+      </details>
+    </div>
+  </div>
+</header>
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/zh/">首页</a></nav>
+    <p class="eyebrow">项目进展</p>
+    <h1><span class="hl">哪些在跑，</span><span class="hl">哪些在测，</span><span class="hl">哪些还在纸上</span></h1>
+    <p class="summary">下面列出案例中各项工作的进展：已在日常使用、已用真实数据测试、正在进行，或只完成了设计。</p>
+    
+  </div>
+</section><div class="wrap page-body"><div class="prose">
+<h2 class="status-h st-production">已上线</h2>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">流程</th><th scope="col">做什么</th></tr></thead>
+<tbody>
+<tr><td>网站商品目录流程</td><td>供应商文件 → 匹配 → 改价诊断 → 人工批准 → 带回滚的批量写入 → 回读（<a href="/zh/cases/website-catalog-operations/">案例</a>）</td></tr>
+<tr><td>图片流程</td><td>用真实请求测试供应商图片链接，规格化、上传、逐张核验</td></tr>
+<tr><td>老旧软件录入</td><td>结构化输入 → 桌面自动化 → 状态回写（<a href="/zh/cases/legacy-software-automation/">案例</a>）</td></tr>
+<tr><td>价格与库存查询</td><td>一次查询覆盖供应商和内部数据（<a href="/zh/cases/price-inventory-lookup/">案例</a>）</td></tr>
+</tbody></table></div>
+
+<h2 class="status-h st-tested">已在真实数据上测试</h2>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">流程</th><th scope="col">做什么</th></tr></thead>
+<tbody>
+<tr><td>发票 PDF → 结构化数据</td><td>供应商发票 → 固定格式的明细行，附对账合计（<a href="/zh/cases/supplier-data-structuring/">案例</a>）</td></tr>
+<tr><td>SKU 与商品身份匹配</td><td>处理前缀、空格和变体差异；不确定的匹配上报人工，绝不强配。一次测试中，45 个型号对约 6,500 条记录，匹配上 44 个</td></tr>
+<tr><td>商品规格补全</td><td>尺寸、单位换算、技术规格、双语文字和来源标注——从官方来源补全，绝不猜</td></tr>
+<tr><td>商品 / 价格 / 库存准备</td><td>多来源的商品表，缺口明确标出</td></tr>
+</tbody></table></div>
+
+<h2 class="status-h st-progress">进行中</h2>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">流程</th><th scope="col">状态</th></tr></thead>
+<tbody>
+<tr><td>老 POS → Square 迁移</td><td>工具已做好并完成空跑；测试站并行运行中（<a href="/zh/cases/pos-to-square-migration/">案例</a>）</td></tr>
+<tr><td>官方来源图片匹配</td><td>小样本已测试；正在扩大规模</td></tr>
+</tbody></table></div>
+
+<h2 class="status-h st-designed">已设计，尚未搭建</h2>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">流程</th><th scope="col">将来做什么</th></tr></thead>
+<tbody>
+<tr><td>供应商变更侦测</td><td>把每份新价表和上一版对比：新增、消失、改价</td></tr>
+<tr><td>商品目录定时更新</td><td>定时运行目录流程，自动核对、出错自动回滚</td></tr>
+<tr><td>店内商品目录</td><td>约 100,000 件带图商品的平板目录；员工一键把商品推到 POS</td></tr>
+</tbody></table></div>
+
+<h2>今天 AI 用在哪里</h2>
+<p>AI 帮我们快速搭系统、处理杂乱数据。可重复的生产工作由确定性脚本执行。定价、例外和每一次生产写入都由人批准。</p>
+<p>相关服务：<a href="/zh/services/ai-assisted-operations/">AI 辅助运营</a></p>
+</div></div><section class="cta-band"><div class="wrap cta-inner"><h2>哪项工作最花时间？</h2><div class="cta-body"><p>说说团队现在怎么做，用哪些软件和文件。我们一起看看，哪些地方可以通过工具或调整做法来改善。</p><a class="btn btn-invert" href="/zh/contact/">聊聊你的项目 <span aria-hidden="true">→</span></a></div></div></section>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/zh/"><img src="/assets/zeror-mark.png" alt="" width="35" height="22"><span>Zeror</span></a>
+      <p class="footer-tag">业务流程改进与自动化</p>
+      <p class="muted">我们帮助企业减少重复录入、核对业务数据，并改进现有软件之间的工作流程。</p>
+    </div>
+    <nav class="footer-col" aria-label="网站">
+      <p class="footer-h">网站</p>
+      <a href="/zh/services/">服务</a>
+      <a href="/zh/cases/">案例</a>
+      <a href="/zh/how-we-work/">工作方法</a>
+      <a href="/zh/ai-operations/">项目进展</a>
+      <a href="/zh/about/">关于</a>
+      <a href="/zh/contact/">联系</a>
+    </nav>
+    <div class="footer-col">
+      <p class="footer-h">另见</p>
+      <a href="/zh/visualization/">室内效果图</a>
+      <a href="mailto:hello@zeror.ca">hello@zeror.ca</a>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <p>© 2026 Zeror · 立足加拿大</p>
+    <div class="lang-switch" role="group" aria-label="语言"><a href="/ai-operations/" hreflang="en" lang="en">EN</a><a href="/zh/ai-operations/" hreflang="zh-Hans" lang="zh-Hans" aria-current="true">中文</a></div>
+  </div>
+</footer>
+</body>
+</html>

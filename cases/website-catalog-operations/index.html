@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>64,000-Product Catalog: Bulk Updates With Rollback — Zeror</title>
+<meta name="description" content="How a 64,000-product catalog gets new products, prices, images and stock in bulk — every write reversible, verified after writing: 386 of 386 correct.">
+<link rel="canonical" href="https://fde.zeror.ca/cases/website-catalog-operations/">
+<link rel="alternate" hreflang="en" href="https://fde.zeror.ca/cases/website-catalog-operations/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fde.zeror.ca/zh/cases/website-catalog-operations/">
+<link rel="alternate" hreflang="x-default" href="https://fde.zeror.ca/cases/website-catalog-operations/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zeror">
+<meta property="og:locale" content="en_CA">
+<meta property="og:title" content="64,000-Product Catalog: Bulk Updates With Rollback — Zeror">
+<meta property="og:description" content="How a 64,000-product catalog gets new products, prices, images and stock in bulk — every write reversible, verified after writing: 386 of 386 correct.">
+<meta property="og:url" content="https://fde.zeror.ca/cases/website-catalog-operations/">
+<meta property="og:image" content="https://fde.zeror.ca/assets/og-workflow-reconstruction.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Zeror — Workflow Reconstruction">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fde.zeror.ca/assets/og-workflow-reconstruction.png">
+<meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121412" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/zeror-icon-512.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,600..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "Keeping a 64,000-Product Online Catalog Accurate",
+ "description": "How a 64,000-product catalog gets new products, prices, images and stock in bulk — every write reversible, verified after writing: 386 of 386 correct.",
+ "url": "https://fde.zeror.ca/cases/website-catalog-operations/",
+ "mainEntityOfPage": "https://fde.zeror.ca/cases/website-catalog-operations/",
+ "inLanguage": "en",
+ "author": {
+  "@id": "https://zeror.ca/#org"
+ },
+ "publisher": {
+  "@id": "https://zeror.ca/#org"
+ },
+ "datePublished": "2026-09-29",
+ "dateModified": "2026-09-29"
+}
+</script>
+
+</head>
+<body class="lang-en kind-case">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/"><img src="/assets/zeror-mark.png" alt="" width="38" height="24"><span>Zeror</span></a>
+    <nav class="nav" aria-label="Site"><a href="/services/">Services</a><a href="/cases/" aria-current="page">Cases</a><a href="/how-we-work/">How We Work</a><a href="/about/">About</a></nav>
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Language"><a href="/cases/website-catalog-operations/" hreflang="en" lang="en" aria-current="true">EN</a><a href="/zh/cases/website-catalog-operations/" hreflang="zh-Hans" lang="zh-Hans">中文</a></div>
+      <a class="btn btn-primary btn-sm header-cta" href="/contact/">Tell Us About the Work</a>
+      <details class="mobile-menu">
+        <summary>Menu</summary>
+        <nav class="mobile-panel" aria-label="Menu"><a href="/services/">Services</a><a href="/cases/" aria-current="page">Cases</a><a href="/how-we-work/">How We Work</a><a href="/about/">About</a><a class="btn btn-primary" href="/contact/">Tell Us About the Work</a></nav>
+      </details>
+    </div>
+  </div>
+</header>
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/cases/">Cases</a></nav>
+    <p class="eyebrow">Case <span class="ev ev-measured">Measured</span></p>
+    <h1>Keeping a 64,000-Product Online Catalog Accurate</h1>
+    <p class="summary">We rebuilt how a ~64,000-product online catalog is updated. Supplier price lists, datasheets and stock files now go through one pipeline — parse, match, diagnose, human approval, bulk write with rollback, read-back. In production, price updates verified 386 of 386 after writing and stock updates 556 of 556, with zero products outside scope touched.</p>
+    
+  </div>
+</section><div class="wrap page-body split"><div class="prose">
+<h2>The problem</h2>
+<p>Suppliers refresh price lists and product data in inconsistent formats, with contradictory status columns and widely broken image links. A full-site audit found:</p>
+<div class="facts">
+  <div><p class="fact-num">812</p><p>live products with broken images</p></div>
+  <div><p class="fact-num">3,948</p><p>live products with no price</p></div>
+  <div><p class="fact-num">7,793</p><p>in-stock products hidden from sale</p></div>
+  <div><p class="fact-num">24</p><p>brand pages that opened empty</p></div>
+</div>
+<p>Fixing thousands of listings by hand was not feasible. Bulk-editing without a way back was not safe.</p>
+
+<h2>The rebuilt flow</h2>
+<ol class="flow">
+  <li>Supplier price list, datasheet and inventory file</li>
+  <li>Read-only snapshot of the live catalog</li>
+  <li>Parse and clean the supplier files</li>
+  <li>Decide what should be on sale</li>
+  <li>Match to existing listings</li>
+  <li>Price-change diagnostic</li>
+  <li class="human">Human approval</li>
+  <li>Bulk write with rollback</li>
+  <li>Read back and reconcile</li>
+  <li>Exception list and supplier data request</li>
+</ol>
+
+<h2>Results <span class="ev ev-measured">Measured</span></h2>
+<ul class="results">
+  <li>About 64,000 products across 56 brands audited in full</li>
+  <li>One brand rollout: a 5,887-SKU supplier price list matched against 7,073 listings; <strong>5,204 products brought live</strong></li>
+  <li>Price update verified after writing: <strong>386 of 386 correct</strong>, 0 products outside scope touched</li>
+  <li>Stock update verified after writing: <strong>556 of 556 correct</strong></li>
+  <li><strong>3,378</strong> supplier image URLs tested with real requests; <strong>2,829 of 2,838</strong> uploads verified (99.68%)</li>
+  <li>Storefront brand pages consolidated from <strong>55 to 12</strong></li>
+  <li>Every production write script requires explicit human release — <strong>34 of 34</strong></li>
+  <li>The same process has since been reused across further brands</li>
+</ul>
+
+<h2>What the project covers</h2>
+<p>The update pipeline above is built from thirteen capabilities. Each one has run on the live catalog.</p>
+<div class="table-wrap"><table class="cap-table">
+<thead><tr><th scope="col">Capability</th><th scope="col">What it does</th><th scope="col">Verified at</th></tr></thead>
+<tbody>
+<tr><td>Read-only catalog snapshot</td><td>Pulls the live catalog into a local baseline without touching production</td><td>5 related tables in one backup</td></tr>
+<tr><td>Supplier file parsing</td><td>Reads messy supplier spreadsheets: repeated page headers, dates stored as numbers, #N/A, conflicting status columns</td><td>5,887-SKU price list</td></tr>
+<tr><td>Sellable-scope decision</td><td>Decides what should be on sale from the price list, stock list and current site, and checks every model is accounted for</td><td>898 models, all accounted for</td></tr>
+<tr><td>Exact model matching</td><td>Matches supplier SKUs to listings without “cleaning away” real differences between variants</td><td>5,887 SKUs vs 7,073 listings</td></tr>
+<tr><td>Price-change diagnostic</td><td>Tells a small adjustment from a full repricing before anything is written</td><td>3,286 comparable products</td></tr>
+<tr><td>Reversible bulk writes</td><td>Every change ships with an execute script, a rollback script and a per-item change record; preview by default</td><td>2,000+ rows in one run</td></tr>
+<tr><td>Read-back verification</td><td>Re-reads the catalog to prove that what was written equals what was calculated</td><td>386 / 386 prices, 556 / 556 stock</td></tr>
+<tr><td>Image pipeline</td><td>Tests every link with a real request, sorts failures into seven types, normalizes images to one format, uploads and verifies each file</td><td>3,378 URLs tested; 2,829 / 2,838 uploads</td></tr>
+<tr><td>Category inference</td><td>Assigns categories to new products from existing patterns; anything uncertain goes to a person</td><td>Full mapping for one brand</td></tr>
+<tr><td>Full-site audit</td><td>Buckets problems across the whole catalog: broken images, missing prices, hidden in-stock items, empty brand pages</td><td>~64,000 products</td></tr>
+<tr><td>Supplier data requests</td><td>Turns “why this can’t go live” into a ready-to-send English request sheet for the supplier</td><td>327 and 102 items for two brands</td></tr>
+<tr><td>Storefront cleanup</td><td>Merges duplicate brands, retires empty brand pages, changes listing status in bulk</td><td>Brand pages 55 → 12</td></tr>
+<tr><td>Platform changes</td><td>Deploys site modifications with a rollback point, step-by-step checks and a smoke test</td><td>One version upgrade</td></tr>
+</tbody></table></div>
+<p class="footnote">Designed next, not built yet: detecting what changed between two supplier price lists, and running the pipeline on a schedule with automatic checks and rollback.</p>
+
+<h2>Where people stay in control</h2>
+<p>Six decisions are never automated:</p>
+<ol class="numbered">
+  <li>Which price tier to use</li>
+  <li>Which product categories to sell</li>
+  <li>Category assignment when automatic inference fails</li>
+  <li>Releasing each write</li>
+  <li>Resolving model-number conflicts</li>
+  <li>Anything irreversible</li>
+</ol>
+
+<h2>Three rules behind it</h2>
+<ul>
+  <li><strong>Measure, don’t assume.</strong> Image availability is decided by a real request, not by the file name.</li>
+  <li><strong>Every write ships with a rollback,</strong> and runs in preview first.</li>
+  <li><strong>Disable, don’t delete.</strong> Deleting breaks links and order history, and cannot be undone.</li>
+</ul>
+
+<p class="principle"><span>Key principle</span> The system calculates every option and its consequence. The business owner makes the call.</p>
+<p class="related-service"><span>Related service:</span> <a href="/services/website-catalog-operations/">Website & Catalog Operations</a></p><nav class="related-nav" aria-label="More cases"><p class="label">More cases</p><ul><li><a href="/cases/pos-to-square-migration/">Moving from a legacy POS to Square</a></li><li><a href="/cases/legacy-software-automation/">Automating data entry into legacy desktop software</a></li><li><a href="/cases/order-supply-workflow/">Reconnecting sales and purchasing</a></li><li><a href="/cases/price-inventory-lookup/">One lookup for prices and inventory</a></li><li><a href="/cases/sample-tracking/">Tracking showroom samples</a></li><li><a href="/cases/supplier-data-structuring/">Turning supplier documents into structured product data</a></li><li><a href="/cases/zeror-ca/">Built from zero: zeror.ca</a></li></ul></nav></div><aside class="side"><div class="side-card"><p class="label">Case record</p><dl class="kv"><div><dt>Evidence</dt><dd><span class="ev ev-measured">Measured</span></dd></div><div><dt>Catalog</dt><dd>~64,000 products · 56 brands</dd></div><div><dt>Price read-back</dt><dd>386 / 386</dd></div><div><dt>Stock read-back</dt><dd>556 / 556</dd></div><div><dt>Images verified</dt><dd>2,829 / 2,838</dd></div><div><dt>Writes gated</dt><dd>34 / 34 scripts</dd></div></dl><a class="btn btn-primary btn-block" href="/contact/">Tell Us About the Work <span aria-hidden="true">→</span></a></div></aside></div><section class="cta-band"><div class="wrap cta-inner"><h2>Which task takes too much time?</h2><div class="cta-body"><p>Tell us how your team does it today and which software and files are involved. We can work through where a tool or a different process would help.</p><a class="btn btn-invert" href="/contact/">Discuss Your Project <span aria-hidden="true">→</span></a></div></div></section>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/"><img src="/assets/zeror-mark.png" alt="" width="35" height="22"><span>Zeror</span></a>
+      <p class="footer-tag">Workflow improvement and automation</p>
+      <p class="muted">We help businesses reduce repeat data entry, keep information consistent and improve the work between their existing systems.</p>
+    </div>
+    <nav class="footer-col" aria-label="Site">
+      <p class="footer-h">Site</p>
+      <a href="/services/">Services</a>
+      <a href="/cases/">Cases</a>
+      <a href="/how-we-work/">How We Work</a>
+      <a href="/ai-operations/">Project Status</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <div class="footer-col">
+      <p class="footer-h">Also</p>
+      <a href="/visualization/">Interior Visualization</a>
+      <a href="mailto:hello@zeror.ca">hello@zeror.ca</a>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <p>© 2026 Zeror · Based in Canada</p>
+    <div class="lang-switch" role="group" aria-label="Language"><a href="/cases/website-catalog-operations/" hreflang="en" lang="en" aria-current="true">EN</a><a href="/zh/cases/website-catalog-operations/" hreflang="zh-Hans" lang="zh-Hans">中文</a></div>
+  </div>
+</footer>
+</body>
+</html>

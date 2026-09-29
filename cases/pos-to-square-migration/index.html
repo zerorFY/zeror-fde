@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Legacy POS to Square Migration, Back Office Intact — Zeror</title>
+<meta name="description" content="Moving a business from a legacy desktop POS to Square while its own back-office system — delivery, purchasing, commissions — keeps running. In progress.">
+<link rel="canonical" href="https://fde.zeror.ca/cases/pos-to-square-migration/">
+<link rel="alternate" hreflang="en" href="https://fde.zeror.ca/cases/pos-to-square-migration/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fde.zeror.ca/zh/cases/pos-to-square-migration/">
+<link rel="alternate" hreflang="x-default" href="https://fde.zeror.ca/cases/pos-to-square-migration/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zeror">
+<meta property="og:locale" content="en_CA">
+<meta property="og:title" content="Legacy POS to Square Migration, Back Office Intact — Zeror">
+<meta property="og:description" content="Moving a business from a legacy desktop POS to Square while its own back-office system — delivery, purchasing, commissions — keeps running. In progress.">
+<meta property="og:url" content="https://fde.zeror.ca/cases/pos-to-square-migration/">
+<meta property="og:image" content="https://fde.zeror.ca/assets/og-workflow-reconstruction.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Zeror — Workflow Reconstruction">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fde.zeror.ca/assets/og-workflow-reconstruction.png">
+<meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121412" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/zeror-icon-512.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,600..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "Switching the Point of Sale Without Breaking the Business Behind It",
+ "description": "Moving a business from a legacy desktop POS to Square while its own back-office system — delivery, purchasing, commissions — keeps running. In progress.",
+ "url": "https://fde.zeror.ca/cases/pos-to-square-migration/",
+ "mainEntityOfPage": "https://fde.zeror.ca/cases/pos-to-square-migration/",
+ "inLanguage": "en",
+ "author": {
+  "@id": "https://zeror.ca/#org"
+ },
+ "publisher": {
+  "@id": "https://zeror.ca/#org"
+ },
+ "datePublished": "2026-09-29",
+ "dateModified": "2026-09-29"
+}
+</script>
+
+</head>
+<body class="lang-en kind-case">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/"><img src="/assets/zeror-mark.png" alt="" width="38" height="24"><span>Zeror</span></a>
+    <nav class="nav" aria-label="Site"><a href="/services/">Services</a><a href="/cases/" aria-current="page">Cases</a><a href="/how-we-work/">How We Work</a><a href="/about/">About</a></nav>
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Language"><a href="/cases/pos-to-square-migration/" hreflang="en" lang="en" aria-current="true">EN</a><a href="/zh/cases/pos-to-square-migration/" hreflang="zh-Hans" lang="zh-Hans">中文</a></div>
+      <a class="btn btn-primary btn-sm header-cta" href="/contact/">Tell Us About the Work</a>
+      <details class="mobile-menu">
+        <summary>Menu</summary>
+        <nav class="mobile-panel" aria-label="Menu"><a href="/services/">Services</a><a href="/cases/" aria-current="page">Cases</a><a href="/how-we-work/">How We Work</a><a href="/about/">About</a><a class="btn btn-primary" href="/contact/">Tell Us About the Work</a></nav>
+      </details>
+    </div>
+  </div>
+</header>
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/cases/">Cases</a></nav>
+    <p class="eyebrow">Case <span class="ev ev-progress">In progress</span></p>
+    <h1>Switching the Point of Sale Without Breaking the Business Behind It</h1>
+    <p class="summary">A business is moving from a legacy desktop POS to Square while keeping its own back-office system — order follow-up, delivery, purchasing and commissions — running unchanged. The migration tooling is built and dry-run, and old and new systems are running in parallel on a test site ahead of a full rehearsal.</p>
+    <p class="status-line"><strong>Status:</strong> In progress — cutover tooling built and dry-run; parallel test site running; full rehearsal before go-live.</p>
+  </div>
+</section><div class="wrap page-body split"><div class="prose">
+<h2>The problem</h2>
+<p>The legacy POS was the source of every sale. Around it, the business had built its own web system for order follow-up, delivery, purchasing and sales commissions — all fed by a live sync from the old POS. Moving to Square meant the POS could change, but everything behind it had to keep working the next morning.</p>
+
+<h2>What the old system held</h2>
+<div class="facts">
+  <div><p class="fact-num">66,000+</p><p>products, of which only about 5,000 were active</p></div>
+  <div><p class="fact-num">15,000+</p><p>customers, about 3,200 active in the last two years</p></div>
+  <div><p class="fact-num">≈ 58,000</p><p>historical sales documents</p></div>
+  <div><p class="fact-num">100+</p><p>suppliers, plus open deposits, store credit and years of commission rules</p></div>
+</div>
+
+<h2>What we rebuilt</h2>
+<ul class="results">
+  <li><strong>Business rules first</strong> — which document types survive, how returns and exchanges work across two systems, how deposits and store credit are closed out, how numbering continues without collisions</li>
+  <li><strong>Selective migration</strong> — only in-stock, active products with a supplier; only customers active in the last two years; older customers stay reachable through a one-click lookup tool</li>
+  <li><strong>Square → back-office sync</strong> — sales, payments and returns from Square flow back into the existing system, so delivery, purchasing and commission logic run unchanged</li>
+  <li><strong>Automatic ID-conflict resolution</strong> — when old and new systems claim the same internal number, the new record is renumbered everywhere it is referenced; visible numbers (invoice, customer, SKU) never change</li>
+  <li><strong>Legacy returns</strong> — returns on old sales automatically restock Square, creating the product if Square does not have it</li>
+  <li><strong>Parallel test site</strong> — a copy of the back-office system receives both the old POS feed and the Square feed, while the live system keeps running untouched</li>
+  <li><strong>Staff tools</strong> — invoice printing, receipts, QR codes and SMS links from the back-office system; a permission survey where six staff reviewed 97 Square permissions before roles were set</li>
+  <li><strong>POS set up for how the store sells</strong> — sale-term options on every item (final sale, sample sale, gift, pre-order), the list price printed on receipts when it is higher than the selling price, and staff mapped so commissions keep calculating</li>
+  <li><strong>Cutover plan</strong> — a written, step-by-step night-of procedure with backups, reconciliation checks and a defined rollback</li>
+</ul>
+
+<p class="principle"><span>Key principle</span> Change the tool at the counter. Keep the business behind it running.</p>
+<p class="related-service"><span>Related service:</span> <a href="/services/pos-erp-migration/">SaaS / POS / ERP Transition</a></p><nav class="related-nav" aria-label="More cases"><p class="label">More cases</p><ul><li><a href="/cases/website-catalog-operations/">Keeping a 64,000-product online catalog accurate</a></li><li><a href="/cases/legacy-software-automation/">Automating data entry into legacy desktop software</a></li><li><a href="/cases/order-supply-workflow/">Reconnecting sales and purchasing</a></li><li><a href="/cases/price-inventory-lookup/">One lookup for prices and inventory</a></li><li><a href="/cases/sample-tracking/">Tracking showroom samples</a></li><li><a href="/cases/supplier-data-structuring/">Turning supplier documents into structured product data</a></li><li><a href="/cases/zeror-ca/">Built from zero: zeror.ca</a></li></ul></nav></div><aside class="side"><div class="side-card"><p class="label">Case record</p><dl class="kv"><div><dt>Status</dt><dd><span class="ev ev-progress">In progress</span></dd></div><div><dt>From → to</dt><dd>Legacy desktop POS → Square</dd></div><div><dt>Products</dt><dd>66,000+ (~5,000 active)</dd></div><div><dt>Customers</dt><dd>15,000+ (~3,200 active)</dd></div><div><dt>History</dt><dd>≈ 58,000 documents</dd></div><div><dt>Back office</dt><dd>Keeps running</dd></div></dl><a class="btn btn-primary btn-block" href="/contact/">Tell Us About the Work <span aria-hidden="true">→</span></a></div></aside></div><section class="cta-band"><div class="wrap cta-inner"><h2>Which task takes too much time?</h2><div class="cta-body"><p>Tell us how your team does it today and which software and files are involved. We can work through where a tool or a different process would help.</p><a class="btn btn-invert" href="/contact/">Discuss Your Project <span aria-hidden="true">→</span></a></div></div></section>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/"><img src="/assets/zeror-mark.png" alt="" width="35" height="22"><span>Zeror</span></a>
+      <p class="footer-tag">Workflow improvement and automation</p>
+      <p class="muted">We help businesses reduce repeat data entry, keep information consistent and improve the work between their existing systems.</p>
+    </div>
+    <nav class="footer-col" aria-label="Site">
+      <p class="footer-h">Site</p>
+      <a href="/services/">Services</a>
+      <a href="/cases/">Cases</a>
+      <a href="/how-we-work/">How We Work</a>
+      <a href="/ai-operations/">Project Status</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <div class="footer-col">
+      <p class="footer-h">Also</p>
+      <a href="/visualization/">Interior Visualization</a>
+      <a href="mailto:hello@zeror.ca">hello@zeror.ca</a>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <p>© 2026 Zeror · Based in Canada</p>
+    <div class="lang-switch" role="group" aria-label="Language"><a href="/cases/pos-to-square-migration/" hreflang="en" lang="en" aria-current="true">EN</a><a href="/zh/cases/pos-to-square-migration/" hreflang="zh-Hans" lang="zh-Hans">中文</a></div>
+  </div>
+</footer>
+</body>
+</html>

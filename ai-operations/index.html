@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project Status — Zeror</title>
+<meta name="description" content="Which AI-assisted and automated workflows run in production, which are tested, and which are only designed — labeled honestly.">
+<link rel="canonical" href="https://fde.zeror.ca/ai-operations/">
+<link rel="alternate" hreflang="en" href="https://fde.zeror.ca/ai-operations/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fde.zeror.ca/zh/ai-operations/">
+<link rel="alternate" hreflang="x-default" href="https://fde.zeror.ca/ai-operations/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zeror">
+<meta property="og:locale" content="en_CA">
+<meta property="og:title" content="Project Status — Zeror">
+<meta property="og:description" content="Which AI-assisted and automated workflows run in production, which are tested, and which are only designed — labeled honestly.">
+<meta property="og:url" content="https://fde.zeror.ca/ai-operations/">
+<meta property="og:image" content="https://fde.zeror.ca/assets/og-workflow-reconstruction.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Zeror — Workflow Reconstruction">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fde.zeror.ca/assets/og-workflow-reconstruction.png">
+<meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121412" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/zeror-icon-512.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,600..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebPage",
+ "url": "https://fde.zeror.ca/ai-operations/",
+ "name": "Project Status — Zeror",
+ "description": "Which AI-assisted and automated workflows run in production, which are tested, and which are only designed — labeled honestly.",
+ "inLanguage": "en",
+ "isPartOf": {
+  "@id": "https://fde.zeror.ca/#website"
+ }
+}
+</script>
+
+</head>
+<body class="lang-en kind-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/"><img src="/assets/zeror-mark.png" alt="" width="38" height="24"><span>Zeror</span></a>
+    <nav class="nav" aria-label="Site"><a href="/services/">Services</a><a href="/cases/">Cases</a><a href="/how-we-work/">How We Work</a><a href="/about/">About</a></nav>
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Language"><a href="/ai-operations/" hreflang="en" lang="en" aria-current="true">EN</a><a href="/zh/ai-operations/" hreflang="zh-Hans" lang="zh-Hans">中文</a></div>
+      <a class="btn btn-primary btn-sm header-cta" href="/contact/">Tell Us About the Work</a>
+      <details class="mobile-menu">
+        <summary>Menu</summary>
+        <nav class="mobile-panel" aria-label="Menu"><a href="/services/">Services</a><a href="/cases/">Cases</a><a href="/how-we-work/">How We Work</a><a href="/about/">About</a><a class="btn btn-primary" href="/contact/">Tell Us About the Work</a></nav>
+      </details>
+    </div>
+  </div>
+</header>
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a></nav>
+    <p class="eyebrow">Project Status</p>
+    <h1><span class="hl">What’s Live,</span><span class="hl">What’s Tested,</span><span class="hl">What’s Still on Paper</span></h1>
+    <p class="summary">Here is the current status of the work described in our cases: running in daily use, tested on real data, in progress, or designed but not built.</p>
+    
+  </div>
+</section><div class="wrap page-body"><div class="prose">
+<h2 class="status-h st-production">In production</h2>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">Workflow</th><th scope="col">What it does</th></tr></thead>
+<tbody>
+<tr><td>Website catalog pipeline</td><td>Supplier files → match → price diagnostic → human approval → bulk write with rollback → read-back (<a href="/cases/website-catalog-operations/">case</a>)</td></tr>
+<tr><td>Image pipeline</td><td>Test supplier image links with real requests, normalize, upload, verify each file</td></tr>
+<tr><td>Legacy software entry</td><td>Structured input → desktop automation → status write-back (<a href="/cases/legacy-software-automation/">case</a>)</td></tr>
+<tr><td>Price &amp; inventory lookup</td><td>One lookup across supplier and internal sources (<a href="/cases/price-inventory-lookup/">case</a>)</td></tr>
+</tbody></table></div>
+
+<h2 class="status-h st-tested">Tested on real data</h2>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">Workflow</th><th scope="col">What it does</th></tr></thead>
+<tbody>
+<tr><td>Invoice PDF → structured data</td><td>Supplier invoices → fixed-schema line items with reconciliation totals (<a href="/cases/supplier-data-structuring/">case</a>)</td></tr>
+<tr><td>SKU and product identity matching</td><td>Prefix, spacing and variant normalization; ambiguous matches escalated, never forced. In a trial, 44 of 45 models matched against ~6,500 records</td></tr>
+<tr><td>Product specification enrichment</td><td>Dimensions, unit conversion, technical specifications, bilingual text and source references — filled from official sources, never guessed</td></tr>
+<tr><td>Product / price / inventory preparation</td><td>Multi-source product sheets with explicit gaps</td></tr>
+</tbody></table></div>
+
+<h2 class="status-h st-progress">In progress</h2>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">Workflow</th><th scope="col">Status</th></tr></thead>
+<tbody>
+<tr><td>Legacy POS → Square migration</td><td>Tooling built and dry-run; parallel test site running (<a href="/cases/pos-to-square-migration/">case</a>)</td></tr>
+<tr><td>Official-source image mapping</td><td>Small sample tested; scaling in progress</td></tr>
+</tbody></table></div>
+
+<h2 class="status-h st-designed">Designed, not yet built</h2>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">Workflow</th><th scope="col">What it will do</th></tr></thead>
+<tbody>
+<tr><td>Supplier change detection</td><td>Compare each new price list with the last one: new, removed, repriced</td></tr>
+<tr><td>Scheduled catalog updates</td><td>Run the catalog pipeline on a schedule with automatic checks and rollback</td></tr>
+<tr><td>In-store product catalog</td><td>A tablet catalog of about 100,000 products with images; staff push an item to the POS in one click</td></tr>
+</tbody></table></div>
+
+<h2>How AI is used today</h2>
+<p>AI helps us build systems quickly and handle messy data. Repeatable production work runs as deterministic scripts. People approve pricing, exceptions and every production write.</p>
+<p>Related service: <a href="/services/ai-assisted-operations/">AI-Assisted Operations</a></p>
+</div></div><section class="cta-band"><div class="wrap cta-inner"><h2>Which task takes too much time?</h2><div class="cta-body"><p>Tell us how your team does it today and which software and files are involved. We can work through where a tool or a different process would help.</p><a class="btn btn-invert" href="/contact/">Discuss Your Project <span aria-hidden="true">→</span></a></div></div></section>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/"><img src="/assets/zeror-mark.png" alt="" width="35" height="22"><span>Zeror</span></a>
+      <p class="footer-tag">Workflow improvement and automation</p>
+      <p class="muted">We help businesses reduce repeat data entry, keep information consistent and improve the work between their existing systems.</p>
+    </div>
+    <nav class="footer-col" aria-label="Site">
+      <p class="footer-h">Site</p>
+      <a href="/services/">Services</a>
+      <a href="/cases/">Cases</a>
+      <a href="/how-we-work/">How We Work</a>
+      <a href="/ai-operations/">Project Status</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <div class="footer-col">
+      <p class="footer-h">Also</p>
+      <a href="/visualization/">Interior Visualization</a>
+      <a href="mailto:hello@zeror.ca">hello@zeror.ca</a>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <p>© 2026 Zeror · Based in Canada</p>
+    <div class="lang-switch" role="group" aria-label="Language"><a href="/ai-operations/" hreflang="en" lang="en" aria-current="true">EN</a><a href="/zh/ai-operations/" hreflang="zh-Hans" lang="zh-Hans">中文</a></div>
+  </div>
+</footer>
+</body>
+</html>

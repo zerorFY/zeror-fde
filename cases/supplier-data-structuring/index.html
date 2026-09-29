@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Supplier Documents to Structured Product Data — Zeror</title>
+<meta name="description" content="Invoices, price lists and spec sheets turned into structured product data — matching that flags ambiguity instead of guessing. Tested on real data.">
+<link rel="canonical" href="https://fde.zeror.ca/cases/supplier-data-structuring/">
+<link rel="alternate" hreflang="en" href="https://fde.zeror.ca/cases/supplier-data-structuring/">
+<link rel="alternate" hreflang="zh-Hans" href="https://fde.zeror.ca/zh/cases/supplier-data-structuring/">
+<link rel="alternate" hreflang="x-default" href="https://fde.zeror.ca/cases/supplier-data-structuring/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zeror">
+<meta property="og:locale" content="en_CA">
+<meta property="og:title" content="Supplier Documents to Structured Product Data — Zeror">
+<meta property="og:description" content="Invoices, price lists and spec sheets turned into structured product data — matching that flags ambiguity instead of guessing. Tested on real data.">
+<meta property="og:url" content="https://fde.zeror.ca/cases/supplier-data-structuring/">
+<meta property="og:image" content="https://fde.zeror.ca/assets/og-workflow-reconstruction.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Zeror — Workflow Reconstruction">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fde.zeror.ca/assets/og-workflow-reconstruction.png">
+<meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121412" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/zeror-icon-512.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,600..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "Turning Supplier Documents Into Structured Product Data",
+ "description": "Invoices, price lists and spec sheets turned into structured product data — matching that flags ambiguity instead of guessing. Tested on real data.",
+ "url": "https://fde.zeror.ca/cases/supplier-data-structuring/",
+ "mainEntityOfPage": "https://fde.zeror.ca/cases/supplier-data-structuring/",
+ "inLanguage": "en",
+ "author": {
+  "@id": "https://zeror.ca/#org"
+ },
+ "publisher": {
+  "@id": "https://zeror.ca/#org"
+ },
+ "datePublished": "2026-09-29",
+ "dateModified": "2026-09-29"
+}
+</script>
+
+</head>
+<body class="lang-en kind-case">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/"><img src="/assets/zeror-mark.png" alt="" width="38" height="24"><span>Zeror</span></a>
+    <nav class="nav" aria-label="Site"><a href="/services/">Services</a><a href="/cases/" aria-current="page">Cases</a><a href="/how-we-work/">How We Work</a><a href="/about/">About</a></nav>
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Language"><a href="/cases/supplier-data-structuring/" hreflang="en" lang="en" aria-current="true">EN</a><a href="/zh/cases/supplier-data-structuring/" hreflang="zh-Hans" lang="zh-Hans">中文</a></div>
+      <a class="btn btn-primary btn-sm header-cta" href="/contact/">Tell Us About the Work</a>
+      <details class="mobile-menu">
+        <summary>Menu</summary>
+        <nav class="mobile-panel" aria-label="Menu"><a href="/services/">Services</a><a href="/cases/" aria-current="page">Cases</a><a href="/how-we-work/">How We Work</a><a href="/about/">About</a><a class="btn btn-primary" href="/contact/">Tell Us About the Work</a></nav>
+      </details>
+    </div>
+  </div>
+</header>
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/cases/">Cases</a></nav>
+    <p class="eyebrow">Case <span class="ev ev-tested">Tested</span></p>
+    <h1>Turning Supplier Documents Into Structured Product Data</h1>
+    <p class="summary">Supplier invoices, price lists and spec sheets arrived in every format and were re-keyed by hand. We built rule-based extraction and matching that turns them into structured product data, flags every ambiguous match for a person, and never fills a value it cannot source. In a matching trial, 44 of 45 models matched against about 6,500 records.</p>
+    <p class="status-line"><strong>Status:</strong> Tested on real data — results reviewed and accepted by the business; not yet a production pipeline.</p>
+  </div>
+</section><div class="wrap page-body split"><div class="prose">
+<h2>The problem</h2>
+<p>Supplier invoices, promotional price lists and spec sheets arrived as PDFs and spreadsheets, each supplier in its own format. The same model could appear with a prefix, extra spaces or a variant suffix. Staff re-keyed invoice lines, looked up specifications one by one, and cross-checked everything against internal records.</p>
+
+<h2>What we built</h2>
+<ul class="results">
+  <li><strong>Invoice PDF → structured sheet</strong> — one fixed format per invoice: model, net unit cost, quantity, supplier, invoice number, status and notes, with a final total row that reconciles cost × quantity. Tax, freight and backorder-only lines are left out; credits keep a negative quantity.</li>
+  <li><strong>Supplier and invoice identification</strong> — supplier name variants mapped to one canonical name; invoice numbers extracted.</li>
+  <li><strong>Model matching</strong> — exact match first, then normalized (prefixes, spacing, case), then a controlled fuzzy fallback. Anything that matches more than one record is flagged, never picked silently.</li>
+  <li><strong>Specification enrichment</strong> — dimensions, unit conversion and technical specifications filled from official sources in a fixed priority order, with the source recorded. If no reliable source exists, the field stays blank and is listed as an exception.</li>
+  <li><strong>Price and product sheets</strong> — filterable product lists from supplier PDFs, price write-back by model, and combined product, price and stock sheets with gaps marked.</li>
+  <li><strong>Image mapping</strong> — official product images mapped to SKUs, up to three per SKU, on a tested sample.</li>
+</ul>
+
+<h2>Results <span class="ev ev-tested">Tested</span></h2>
+<ul class="results">
+  <li>Model matching trial: <strong>44 of 45</strong> models matched against ~6,500 records; <strong>10</strong> ambiguous matches sent to a person; 1 reported as unmatched</li>
+  <li>Invoice rules applied to real supplier invoices, with the total reconciled on every sheet</li>
+  <li>Product specification sheets produced with dimensions, conversions, source notes and an explicit exception list</li>
+  <li>Image mapping tested on a 10-SKU sample; large-scale runs are still being made reliable</li>
+</ul>
+<p class="footnote">These workflows have run on real business data, and the business reviewed and accepted the results. They are not yet a production pipeline: every output is checked by a person, and we do not publish accuracy rates we have not measured.</p>
+
+<h2>Where people stay in control</h2>
+<ul>
+  <li>Any match with more than one candidate</li>
+  <li>Whether two variant model numbers are the same product</li>
+  <li>Whether a source is reliable enough to fill a missing value</li>
+  <li>The final check of every sheet before it is used</li>
+</ul>
+
+<p class="principle"><span>Key principle</span> Leave a field blank rather than guess it. A visible gap costs less than a silent error.</p>
+<p class="related-service"><span>Related service:</span> <a href="/services/data-structuring/">Operational Data Structuring</a> · <a href="/services/ai-assisted-operations/">AI-Assisted Operations</a></p><nav class="related-nav" aria-label="More cases"><p class="label">More cases</p><ul><li><a href="/cases/website-catalog-operations/">Keeping a 64,000-product online catalog accurate</a></li><li><a href="/cases/pos-to-square-migration/">Moving from a legacy POS to Square</a></li><li><a href="/cases/legacy-software-automation/">Automating data entry into legacy desktop software</a></li><li><a href="/cases/order-supply-workflow/">Reconnecting sales and purchasing</a></li><li><a href="/cases/price-inventory-lookup/">One lookup for prices and inventory</a></li><li><a href="/cases/sample-tracking/">Tracking showroom samples</a></li><li><a href="/cases/zeror-ca/">Built from zero: zeror.ca</a></li></ul></nav></div><aside class="side"><div class="side-card"><p class="label">Case record</p><dl class="kv"><div><dt>Evidence</dt><dd><span class="ev ev-tested">Tested</span></dd></div><div><dt>Matching trial</dt><dd>44 / 45 models (~6,500 records)</dd></div><div><dt>Sent to a person</dt><dd>10 ambiguous matches</dd></div><div><dt>Invoice output</dt><dd>Fixed format + reconciled total</dd></div><div><dt>Image mapping</dt><dd>10-SKU sample</dd></div><div><dt>Status</dt><dd>Not yet in daily production</dd></div></dl><a class="btn btn-primary btn-block" href="/contact/">Tell Us About the Work <span aria-hidden="true">→</span></a></div></aside></div><section class="cta-band"><div class="wrap cta-inner"><h2>Which task takes too much time?</h2><div class="cta-body"><p>Tell us how your team does it today and which software and files are involved. We can work through where a tool or a different process would help.</p><a class="btn btn-invert" href="/contact/">Discuss Your Project <span aria-hidden="true">→</span></a></div></div></section>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/"><img src="/assets/zeror-mark.png" alt="" width="35" height="22"><span>Zeror</span></a>
+      <p class="footer-tag">Workflow improvement and automation</p>
+      <p class="muted">We help businesses reduce repeat data entry, keep information consistent and improve the work between their existing systems.</p>
+    </div>
+    <nav class="footer-col" aria-label="Site">
+      <p class="footer-h">Site</p>
+      <a href="/services/">Services</a>
+      <a href="/cases/">Cases</a>
+      <a href="/how-we-work/">How We Work</a>
+      <a href="/ai-operations/">Project Status</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <div class="footer-col">
+      <p class="footer-h">Also</p>
+      <a href="/visualization/">Interior Visualization</a>
+      <a href="mailto:hello@zeror.ca">hello@zeror.ca</a>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <p>© 2026 Zeror · Based in Canada</p>
+    <div class="lang-switch" role="group" aria-label="Language"><a href="/cases/supplier-data-structuring/" hreflang="en" lang="en" aria-current="true">EN</a><a href="/zh/cases/supplier-data-structuring/" hreflang="zh-Hans" lang="zh-Hans">中文</a></div>
+  </div>
+</footer>
+</body>
+</html>

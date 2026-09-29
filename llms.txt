@@ -1,0 +1,38 @@
+# Zeror
+
+> Zeror helps businesses reduce repeat data entry, keep information consistent and improve work between their existing systems. Based in Canada. This product site is hosted at https://fde.zeror.ca; Zeror's main domain remains https://zeror.ca.
+
+## Start here: Workflow Reconstruction
+- [Workflow Reconstruction](https://fde.zeror.ca/services/workflow-reconstruction/): Improve one recurring business task. Zeror works through the current process with staff, builds the tools it needs and tests the results against source records. Staff review uncertain results and approve business changes.
+
+Typical problems include repeated copying between systems, spreadsheet- and PDF-heavy operations, legacy software without APIs, catalog maintenance, POS/ERP transitions, supplier data, inventory and order handoffs.
+
+Every number on this site is labeled as measured, an operating estimate, tested, or in progress. A Chinese version of every business page is available under https://fde.zeror.ca/zh/.
+
+## Capabilities
+- [Workflow Reconstruction](https://fde.zeror.ca/services/workflow-reconstruction/): Choose one recurring task. We work through how it is done, build the tools it needs and check whether the changes save time or reduce mistakes.
+- [Website & Catalog Operations](https://fde.zeror.ca/services/website-catalog-operations/): Keep a large product website accurate: products, prices, images and stock updated in bulk, every change reversible and verified.
+- [SaaS / POS / ERP Transition](https://fde.zeror.ca/services/pos-erp-migration/): Switch or upgrade a core system without losing how the business actually runs.
+- [Operational Data Structuring](https://fde.zeror.ca/services/data-structuring/): Turn PDFs, invoices, spreadsheets and supplier catalogs into structured, traceable data.
+- [Internal Tools & Automation](https://fde.zeror.ca/services/internal-tools/): Build a lookup, data-entry tool or script for the work your existing software does not cover.
+- [AI-Assisted Operations](https://fde.zeror.ca/services/ai-assisted-operations/): Use AI to read documents, suggest matches or prepare drafts. Staff review uncertain results and approve business decisions.
+
+## Cases
+- [Keeping a 64,000-product online catalog accurate](https://fde.zeror.ca/cases/website-catalog-operations/): Supplier prices, images and stock kept drifting out of sync with a 64,000-product website. Result: 386 / 386 price updates verified correct after writing.
+- [Moving from a legacy POS to Square](https://fde.zeror.ca/cases/pos-to-square-migration/): The old POS fed the whole back office: order follow-up, delivery, purchasing and commissions. Result: 66,000+ products in the old POS; tooling built and dry-run.
+- [Automating data entry into legacy desktop software](https://fde.zeror.ca/cases/legacy-software-automation/): Product and receiving data were typed by hand into desktop software that could not be replaced. Result: 21,531 product records entered without manual typing.
+- [Reconnecting sales and purchasing](https://fde.zeror.ca/cases/order-supply-workflow/): The same order information was re-entered and reorganized across sales and purchasing. Result: ≈ 67.7 h of manual work removed each month.
+- [One lookup for prices and inventory](https://fde.zeror.ca/cases/price-inventory-lookup/): Staff searched supplier price files, internal stock and supplier stock separately. Result: ≈ 40,000 products in one lookup; 2,000+ lookups a month.
+- [Tracking showroom samples](https://fde.zeror.ca/cases/sample-tracking/): Finding a showroom sample, and whether it was installed, depended on memory and walking around. Result: 5 min → 30 s to find a sample.
+- [Turning supplier documents into structured product data](https://fde.zeror.ca/cases/supplier-data-structuring/): Invoices, price lists and spec sheets arrived as PDFs and spreadsheets in every format, and were re-keyed and cross-checked by hand. Result: 44 / 45 models matched in a trial against ~6,500 records; 10 ambiguous matches sent to a person.
+- [Built from zero: zeror.ca](https://fde.zeror.ca/cases/zeror-ca/): the business site itself, built end to end and structured for bilingual discovery, measurement and iteration.
+
+## More
+- [How we work](https://fde.zeror.ca/how-we-work/)
+- [Project status — work in daily use, tested, in progress or designed](https://fde.zeror.ca/ai-operations/)
+- [Interior visualization — CAD and design concepts to client-ready concept renders](https://fde.zeror.ca/visualization/)
+- [About](https://fde.zeror.ca/about/)
+- [Contact](https://fde.zeror.ca/contact/)
+- [中文版 / Chinese](https://fde.zeror.ca/zh/)
+
+Contact: hello@zeror.ca
