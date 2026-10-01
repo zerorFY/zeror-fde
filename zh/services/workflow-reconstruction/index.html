@@ -53,6 +53,30 @@
    "mainEntity": [
     {
      "@type": "Question",
+     "name": "网站、POS 和表格里的库存数不一致，怎么改善？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "先确定每类库存以哪个记录为准，再核对商品编号、单位和更新时间。我们建立可重复执行的对账流程，把对不上或有冲突的记录交给员工复核，确认后才写入。可以参考<a href=\"https://fde.zeror.ca/zh/cases/price-inventory-lookup/\">价格与库存查询案例<\/a>；统一查询不等于已经实现自动库存同步。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "老软件没有 API，还能减少重复录入吗？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "有些情况可以。先检查文件导入、导出能力，再判断允许使用的桌面操作能否可靠地自动化。先用小范围试运行覆盖正常记录、例外和写入后复核，通过后才扩大范围。无法核实结果的环节保留人工操作。可以参考<a href=\"https://fde.zeror.ca/zh/cases/legacy-software-automation/\">老旧软件自动录入案例<\/a>。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "从旧 POS 迁移到 Square，如何保留后台业务流程？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "先梳理订单、交付、采购和佣金的现有做法，再迁移数据。逐项核对 Square 能支持哪些规则，哪些需要其他工具或人工环节补上。测试数据映射和试运行结果，确定切换与恢复方案，对账后再切换。我们的<a href=\"https://fde.zeror.ca/zh/cases/pos-to-square-migration/\">POS 到 Square 案例<\/a>仍在进行中：工具已经搭建并试运行，不能当作已完成的迁移。"
+     }
+    },
+    {
+     "@type": "Question",
      "name": "我们需要换掉现有软件吗？",
      "acceptedAnswer": {
       "@type": "Answer",
@@ -138,7 +162,7 @@
 <p class="principle"><span>项目范围</span> 先把一项工作做好，再讨论下一步。</p>
 <h2>相关案例</h2>
 <p><a href="/zh/cases/order-supply-workflow/">重新打通销售和采购信息</a>——订单信息只采集一次，结构化后从销售传到采购。每月约减少 67.7 小时手工操作 <span class="ev ev-estimate">运营估算</span></p>
-<section class="faq" aria-labelledby="faq-h"><h2 id="faq-h">常见问题</h2><dl><div class="qa"><dt>我们需要换掉现有软件吗？</dt><dd>通常不需要。先看现有软件能做到什么，确实无法支持新的做法时，再讨论更换。</dd></div><div class="qa"><dt>怎么决定哪些环节自动化？</dt><dd>有明确规则的工作——搬运、匹配、整理、查询、录入数据——交给系统。模糊的情况、例外、审批和最终责任留给人。</dd></div><div class="qa"><dt>从哪里开始？</dt><dd>选一项经常做、又太费时或容易出错的工作。告诉我们现在怎么做，并准备几份相关文件或记录的例子。</dd></div></dl></section>
+<section class="faq" aria-labelledby="faq-h"><h2 id="faq-h">常见问题</h2><dl><div class="qa"><dt>网站、POS 和表格里的库存数不一致，怎么改善？</dt><dd>先确定每类库存以哪个记录为准，再核对商品编号、单位和更新时间。我们建立可重复执行的对账流程，把对不上或有冲突的记录交给员工复核，确认后才写入。可以参考<a href="https://fde.zeror.ca/zh/cases/price-inventory-lookup/">价格与库存查询案例</a>；统一查询不等于已经实现自动库存同步。</dd></div><div class="qa"><dt>老软件没有 API，还能减少重复录入吗？</dt><dd>有些情况可以。先检查文件导入、导出能力，再判断允许使用的桌面操作能否可靠地自动化。先用小范围试运行覆盖正常记录、例外和写入后复核，通过后才扩大范围。无法核实结果的环节保留人工操作。可以参考<a href="https://fde.zeror.ca/zh/cases/legacy-software-automation/">老旧软件自动录入案例</a>。</dd></div><div class="qa"><dt>从旧 POS 迁移到 Square，如何保留后台业务流程？</dt><dd>先梳理订单、交付、采购和佣金的现有做法，再迁移数据。逐项核对 Square 能支持哪些规则，哪些需要其他工具或人工环节补上。测试数据映射和试运行结果，确定切换与恢复方案，对账后再切换。我们的<a href="https://fde.zeror.ca/zh/cases/pos-to-square-migration/">POS 到 Square 案例</a>仍在进行中：工具已经搭建并试运行，不能当作已完成的迁移。</dd></div><div class="qa"><dt>我们需要换掉现有软件吗？</dt><dd>通常不需要。先看现有软件能做到什么，确实无法支持新的做法时，再讨论更换。</dd></div><div class="qa"><dt>怎么决定哪些环节自动化？</dt><dd>有明确规则的工作——搬运、匹配、整理、查询、录入数据——交给系统。模糊的情况、例外、审批和最终责任留给人。</dd></div><div class="qa"><dt>从哪里开始？</dt><dd>选一项经常做、又太费时或容易出错的工作。告诉我们现在怎么做，并准备几份相关文件或记录的例子。</dd></div></dl></section>
 <nav class="related-nav" aria-label="其他服务"><p class="label">其他服务</p><ul><li><a href="/zh/services/website-catalog-operations/">网站与商品目录运营</a></li><li><a href="/zh/services/pos-erp-migration/">SaaS / POS / ERP 系统切换</a></li><li><a href="/zh/services/data-structuring/">运营数据结构化</a></li><li><a href="/zh/services/internal-tools/">内部工具与自动化</a></li><li><a href="/zh/services/ai-assisted-operations/">AI 辅助运营</a></li></ul></nav></div><aside class="side"><div class="side-card"><p class="label">相关案例</p><p class="side-proof"><a href="/zh/cases/order-supply-workflow/">重新打通销售和采购</a></p><a class="btn btn-primary btn-block" href="/zh/contact/">聊聊你的需求 <span aria-hidden="true">→</span></a></div></aside></div><section class="cta-band"><div class="wrap cta-inner"><h2>哪项工作最花时间？</h2><div class="cta-body"><p>说说团队现在怎么做，用哪些软件和文件。我们一起看看，哪些地方可以通过工具或调整做法来改善。</p><a class="btn btn-invert" href="/zh/contact/">聊聊你的项目 <span aria-hidden="true">→</span></a></div></div></section>
 </main>
 <footer class="site-footer">

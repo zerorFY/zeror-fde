@@ -53,6 +53,30 @@
    "mainEntity": [
     {
      "@type": "Question",
+     "name": "How can we reconcile stock numbers across our website, POS and spreadsheets?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Start by agreeing which record is authoritative for each type of stock. We check product identifiers, units and update timing, then build a repeatable reconciliation process. Unmatched records and conflicting quantities go to staff for review before any write. See our <a href=\"https://fde.zeror.ca/cases/price-inventory-lookup/\">price and inventory lookup case<\/a> for related work; a shared lookup is not the same as automatic stock synchronization."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can you reduce manual data entry when our old software has no API?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sometimes. We first check file imports and exports, then whether the permitted desktop workflow can be automated reliably. A small trial must cover normal records, exceptions and read-back checks before wider use. Work that cannot be verified stays manual. See our <a href=\"https://fde.zeror.ca/cases/legacy-software-automation/\">legacy software automation case<\/a>."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do you approach moving from a legacy POS to Square without disrupting back-office work?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Map the current order, delivery, purchasing and commission processes before moving data. Check which rules Square supports and what needs another tool or a manual step. Test mappings and dry runs, agree the cutover and recovery plan, and reconcile records before switching. Our <a href=\"https://fde.zeror.ca/cases/pos-to-square-migration/\">POS-to-Square case<\/a> is still in progress: tooling has been built and dry-run, but it is not a completed migration."
+     }
+    },
+    {
+     "@type": "Question",
      "name": "Do we need to replace our current software?",
      "acceptedAnswer": {
       "@type": "Answer",
@@ -138,7 +162,7 @@
 <p class="principle"><span>Starting rule</span> One workflow at a time. Fix the break before you buy more software.</p>
 <h2>A related project</h2>
 <p><a href="/cases/order-supply-workflow/">Reconnecting sales and purchasing information</a> — order information captured once, structured, and passed from sales to purchasing. About 67.7 hours a month of manual work removed <span class="ev ev-estimate">Operating estimate</span></p>
-<section class="faq" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2><dl><div class="qa"><dt>Do we need to replace our current software?</dt><dd>Usually not. We check what your current software can do first. We discuss replacement only if it cannot support the agreed process.</dd></div><div class="qa"><dt>How do you decide what to automate?</dt><dd>Work that follows known rules — moving, matching, formatting, looking up, entering data — is automated. Ambiguous cases, exceptions, approvals and final accountability stay with people.</dd></div><div class="qa"><dt>Where do we start?</dt><dd>Choose a recurring task that takes too much time or causes frequent mistakes. Show us how it is done and a few examples of the files or records involved.</dd></div></dl></section>
+<section class="faq" aria-labelledby="faq-h"><h2 id="faq-h">Questions</h2><dl><div class="qa"><dt>How can we reconcile stock numbers across our website, POS and spreadsheets?</dt><dd>Start by agreeing which record is authoritative for each type of stock. We check product identifiers, units and update timing, then build a repeatable reconciliation process. Unmatched records and conflicting quantities go to staff for review before any write. See our <a href="https://fde.zeror.ca/cases/price-inventory-lookup/">price and inventory lookup case</a> for related work; a shared lookup is not the same as automatic stock synchronization.</dd></div><div class="qa"><dt>Can you reduce manual data entry when our old software has no API?</dt><dd>Sometimes. We first check file imports and exports, then whether the permitted desktop workflow can be automated reliably. A small trial must cover normal records, exceptions and read-back checks before wider use. Work that cannot be verified stays manual. See our <a href="https://fde.zeror.ca/cases/legacy-software-automation/">legacy software automation case</a>.</dd></div><div class="qa"><dt>How do you approach moving from a legacy POS to Square without disrupting back-office work?</dt><dd>Map the current order, delivery, purchasing and commission processes before moving data. Check which rules Square supports and what needs another tool or a manual step. Test mappings and dry runs, agree the cutover and recovery plan, and reconcile records before switching. Our <a href="https://fde.zeror.ca/cases/pos-to-square-migration/">POS-to-Square case</a> is still in progress: tooling has been built and dry-run, but it is not a completed migration.</dd></div><div class="qa"><dt>Do we need to replace our current software?</dt><dd>Usually not. We check what your current software can do first. We discuss replacement only if it cannot support the agreed process.</dd></div><div class="qa"><dt>How do you decide what to automate?</dt><dd>Work that follows known rules — moving, matching, formatting, looking up, entering data — is automated. Ambiguous cases, exceptions, approvals and final accountability stay with people.</dd></div><div class="qa"><dt>Where do we start?</dt><dd>Choose a recurring task that takes too much time or causes frequent mistakes. Show us how it is done and a few examples of the files or records involved.</dd></div></dl></section>
 <nav class="related-nav" aria-label="Other services"><p class="label">Other services</p><ul><li><a href="/services/website-catalog-operations/">Website & Catalog Operations</a></li><li><a href="/services/pos-erp-migration/">SaaS / POS / ERP Transition</a></li><li><a href="/services/data-structuring/">Operational Data Structuring</a></li><li><a href="/services/internal-tools/">Internal Tools & Automation</a></li><li><a href="/services/ai-assisted-operations/">AI-Assisted Operations</a></li></ul></nav></div><aside class="side"><div class="side-card"><p class="label">Related work</p><p class="side-proof"><a href="/cases/order-supply-workflow/">Reconnecting sales and purchasing</a></p><a class="btn btn-primary btn-block" href="/contact/">Tell Us About the Work <span aria-hidden="true">→</span></a></div></aside></div><section class="cta-band"><div class="wrap cta-inner"><h2>Which task takes too much time?</h2><div class="cta-body"><p>Tell us how your team does it today and which software and files are involved. We can work through where a tool or a different process would help.</p><a class="btn btn-invert" href="/contact/">Discuss Your Project <span aria-hidden="true">→</span></a></div></div></section>
 </main>
 <footer class="site-footer">
