@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,600..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700;900&display=swap">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css?v=cards-r2">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -123,7 +123,7 @@
 <main id="main">
 
 <section class="hero">
-  <div class="wrap hero-grid">
+  <div class="wrap hierarchy-hero">
     <div class="hero-copy">
       <p class="eyebrow">业务流程改进与自动化</p>
       <h1 class="display"><span class="hl">为 AI 时代，</span><span class="hl">重构企业运营。</span></h1>
@@ -132,25 +132,10 @@
       <p class="lede-2">按你的人工投入、业务量和出错成本测算。</p>
       <div class="actions">
         <a class="btn btn-primary" href="/zh/contact/">看看你的业务能改善多少 <span aria-hidden="true">→</span></a>
-        <a class="btn btn-quiet" href="/zh/cases/">查看案例</a>
+        <a class="btn btn-quiet" href="/zh/cases/">看 7 个真实案例</a>
       </div>
     </div>
-    <figure class="run" aria-labelledby="run-cap">
-      <div class="run-head">
-        <span class="run-name">商品目录更新</span>
-        <span class="run-mode">预览 → 放行 → 回读</span>
-      </div>
-      <ol class="run-rows">
-        <li style="--i:0"><span class="run-step">解析</span><span class="run-desc">供应商价表</span><span class="run-val">5,887 个 SKU</span><span class="run-st" aria-hidden="true"><i class="p"></i><i class="d"></i></span></li>
-        <li style="--i:1"><span class="run-step">匹配</span><span class="run-desc">网站现有商品</span><span class="run-val">7,073</span><span class="run-st" aria-hidden="true"><i class="p"></i><i class="d"></i></span></li>
-        <li style="--i:2"><span class="run-step">诊断</span><span class="run-desc">可比价格</span><span class="run-val">3,286</span><span class="run-st" aria-hidden="true"><i class="p"></i><i class="d"></i></span></li>
-        <li class="gate" style="--i:3"><span class="run-step">批准</span><span class="run-desc">价格档位与范围</span><span class="run-val">人工</span><span class="run-st" aria-hidden="true"><i class="p"></i><i class="d"></i></span></li>
-        <li style="--i:4"><span class="run-step">写入</span><span class="run-desc">改价，附带回滚</span><span class="run-val">386</span><span class="run-st" aria-hidden="true"><i class="p"></i><i class="d"></i></span></li>
-        <li class="final" style="--i:5"><span class="run-step">回读</span><span class="run-desc">写入 = 计算</span><span class="run-val">386 / 386</span><span class="run-st" aria-hidden="true"><i class="p"></i><i class="d"></i></span></li>
-      </ol>
-      <div class="run-bar" aria-hidden="true"><span></span></div>
-      <figcaption id="run-cap" class="run-note">各阶段与数字来自一个约 64,000 件商品线上目录的生产运行。<a href="/zh/cases/website-catalog-operations/">查看案例</a></figcaption>
-    </figure>
+    
   </div>
   <div class="wrap">
     <div class="ledger" role="list" aria-label="来自生产系统的数字">
@@ -163,149 +148,7 @@
   </div>
 </section>
 
-<section class="section" id="problems">
-  <div class="wrap">
-    <header class="section-head">
-      <p class="eyebrow">问题</p>
-      <h2>哪些工作还在反复手工处理</h2>
-      <p class="section-intro">软件各自能用，但信息从一个地方传到另一个地方，常常还得靠员工复制、核对和重新录入。</p>
-    </header>
-    <div class="breaks">
-      <article><p class="where">系统之间</p><h3>复制、粘贴、再来一遍</h3><p>团队每天在不同系统之间复制同样的数据。订单、商品、价格、库存和供应商信息，在 SaaS、表格、PDF 和内部工具之间靠手工来回搬。</p></article>
-      <article><p class="where">文件和记忆里</p><h3>数据在某个人的脑子里</h3><p>重要的业务数据散在表格、PDF、网站和某些人的脑子里。信息是有的，但整个公司用不起来。</p></article>
-      <article><p class="where">网站上</p><h3>网站上一个数，货架上另一个数</h3><p>网上的价格、库存和图片，和你实际在卖的越来越不一样。供应商价表一变、图片链接一坏、商品上架了却没有价格——几千件商品，没人改得过来。</p></article>
-      <article><p class="where">核心系统</p><h3>核心系统已经跟不上了</h3><p>POS、ERP 或 SaaS 还能用，但已经跟不上现在的做法。换掉风险大、成本高；不换，员工就得每天重复同样的变通操作。</p></article>
-      <article><p class="where">部门之间</p><h3>五个部门，五个版本的事实</h3><p>销售、采购、仓库、财务和管理层，各自看着不同版本的“事实”。</p></article>
-      <article><p class="where">AI 规划</p><h3>想用 AI，却不知道落在哪</h3><p>你想用 AI，但不知道它能在哪里真正产生运营价值。答案可能是 AI、自动化、一个小内部工具、更好的数据结构——也可能根本不需要新软件。</p></article>
-    </div>
-  </div>
-</section>
-
-<section class="section section-tint" id="who">
-  <div class="wrap two-col">
-    <div class="col-text">
-      <p class="eyebrow">适合谁</p>
-      <h2>适合处理订单、库存和供应商数据的团队</h2>
-      <p class="big">如果你的业务围绕<strong>商品、订单、库存、供应商和客户</strong>运转，而团队每天都要花一部分时间在系统、表格和 PDF 之间搬运这些信息——这就是为你做的。</p>
-      <p>项目通常从一张表格、一份价表，或一项每天占用员工很多时间的工作开始。</p>
-      <p class="muted small">通常是 5 到 200 人的团队：运营复杂到表格管不过来，又特殊到现成平台套不进去。</p>
-    </div>
-    <div class="checklist">
-      <p class="label">下面这些情况，你大概至少遇到过一种</p>
-      <ul>
-        <li>供应商发来新价表，有人要花好几天去改。</li>
-        <li>网站、POS 和表格上的库存数，三个地方三个样。</li>
-        <li>只有一个人知道东西在哪——他一请假，事情就停了。</li>
-        <li>核心系统能用，但每个人每天都在做同样的变通操作。</li>
-        <li>你在考虑换系统，又担心换完什么会坏掉。</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="section flagship" id="workflow-reconstruction">
-  <div class="wrap">
-    <header class="section-head section-head-row">
-      <div>
-        <p class="eyebrow">从这里开始</p>
-        <h2>运营流程重构</h2>
-      </div>
-      <p class="section-intro">这是我们的主要服务，英文叫 Workflow Reconstruction。先改进一项具体工作，例如更新价表或把销售订单交给采购。我们会先看现有软件能做到什么，再决定需要补哪些工具。</p>
-    </header>
-    <div class="product-grid">
-      <article><p class="label">先从哪里开始</p><h3>一项反复做的工作</h3><p>告诉我们现在怎么做、用哪些文件和软件，以及员工最花时间的地方。</p></article>
-      <article><p class="label">我们怎么做</p><h3>和团队一起理清做法</h3><p>确定改进方案，做好需要的工具，并用常见情况和例外来测试。</p></article>
-      <article><p class="label">最后交付什么</p><h3>工具和明确的使用方法</h3><p>可使用的工具、操作说明、需要复核的地方，以及改进前后的对比。修改业务数据时，也会准备恢复办法。</p></article>
-    </div>
-    <div class="actions">
-      <a class="btn btn-primary" href="/zh/services/workflow-reconstruction/">了解服务内容 <span aria-hidden="true">→</span></a>
-      <a class="btn btn-quiet" href="/zh/contact/">聊聊你的项目</a>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="services">
-  <div class="wrap">
-    <header class="section-head section-head-row">
-      <div>
-        <p class="eyebrow">服务</p>
-        <h2>项目中可能需要做的工作</h2>
-      </div>
-      <p class="section-intro">不用先选软件套餐。了解现有做法后，我们一起确定项目需要哪些工作。</p>
-    </header>
-    <div class="modules"><article class="module"><p class="module-kind">从这里开始</p><h3><a class="stretch" href="/zh/services/workflow-reconstruction/">运营流程重构</a></h3><p class="module-line">先选一项反复做的工作。我们梳理做法、做好需要的工具，再检查改完后是否省时、是否减少错误。</p><span class="go" aria-hidden="true">→</span></article><article class="module"><p class="module-kind">网站</p><h3><a class="stretch" href="/zh/services/website-catalog-operations/">网站与商品目录运营</a></h3><p class="module-line">让大型商品网站保持准确：商品、价格、图片和库存批量更新，每次改动都可撤回、可核验。</p><span class="go" aria-hidden="true">→</span></article><article class="module"><p class="module-kind">系统切换</p><h3><a class="stretch" href="/zh/services/pos-erp-migration/">SaaS / POS / ERP 系统切换</a></h3><p class="module-line">切换或升级核心系统，同时不丢掉业务真正的运作方式。</p><span class="go" aria-hidden="true">→</span></article><article class="module"><p class="module-kind">数据</p><h3><a class="stretch" href="/zh/services/data-structuring/">运营数据结构化</a></h3><p class="module-line">把 PDF、发票、表格和供应商目录变成结构化、可追溯的数据。</p><span class="go" aria-hidden="true">→</span></article><article class="module"><p class="module-kind">工具</p><h3><a class="stretch" href="/zh/services/internal-tools/">内部工具与自动化</a></h3><p class="module-line">现有软件做不到的查询、录入或批量处理，我们补上相应的小工具或脚本。</p><span class="go" aria-hidden="true">→</span></article><article class="module"><p class="module-kind">AI</p><h3><a class="stretch" href="/zh/services/ai-assisted-operations/">AI 辅助运营</a></h3><p class="module-line">用 AI 读取文件、提出匹配建议或准备草稿。不确定的结果由员工复核，业务决定由人批准。</p><span class="go" aria-hidden="true">→</span></article></div>
-  </div>
-</section>
-
-<section class="section section-tint" id="method">
-  <div class="wrap">
-    <header class="section-head">
-      <p class="eyebrow">方法</p>
-      <h2>从了解现状，到测试和交付</h2>
-    </header>
-    <ol class="pipeline"><li><span class="node" aria-hidden="true"></span><p class="step-no">01</p><h3>理解</h3><p>看清业务实际怎么运转：角色、系统、重复动作、数据来源、决策和例外。</p></li><li><span class="node" aria-hidden="true"></span><p class="step-no">02</p><h3>重构</h3><p>决定哪些自动化、哪些留给人判断、哪些数据需要结构化、系统在哪里对接。</p></li><li><span class="node" aria-hidden="true"></span><p class="step-no">03</p><h3>搭建</h3><p>一个自动化、一个内部工具、一次系统对接、一条数据管道、一个 AI 辅助流程，或一套网站运营流程。</p></li><li><span class="node" aria-hidden="true"></span><p class="step-no">04</p><h3>集成</h3><p>尽量用好现有系统；当运营模式确实需要时，再迁移到新系统。</p></li><li><span class="node" aria-hidden="true"></span><p class="step-no">05</p><h3>验证</h3><p>用真实情况测试：例外、人工复核、来源核对、写入后回读对账。</p></li></ol>
-    <div class="rules"><p class="label">我们怎样检查工作</p><ol class="rule-list"><li><p class="rule-no">规矩 1</p><h3>实测，不猜。</h3><p>一张图片“能用”，是真的请求加载成功了，而不是文件名看起来对。</p></li><li><p class="rule-no">规矩 2</p><h3>每次写入都能撤回。</h3><p>批量改动先预览，每次都附带回滚。</p></li><li><p class="rule-no">规矩 3</p><h3>下架，不删除。</h3><p>删除会断掉链接和历史记录，下架不会。</p></li></ol></div>
-    <p class="more"><a href="/zh/how-we-work/">看工作方法 <span aria-hidden="true">→</span></a></p>
-  </div>
-</section>
-
-<section class="section" id="cases">
-  <div class="wrap">
-    <header class="section-head section-head-row">
-      <div>
-        <p class="eyebrow">案例</p>
-        <h2>做过的项目</h2>
-      </div>
-      <p class="section-intro">这七个项目来自同一家企业，涉及门店、仓库、约 64,000 件商品的线上目录和几十个供应商。每个案例说明原来的问题、处理方法和结果。</p>
-    </header>
-    <div class="caselist-head" aria-hidden="true"><span>案例</span><span></span><span>结果</span><span>证据</span><span></span></div><ol class="caselist"><li class="caserow"><span class="caserow-no">01</span><div class="caserow-main"><p class="caserow-kind">线上商品目录</p><h3><a class="stretch" href="/zh/cases/website-catalog-operations/">让 64,000 件商品的线上目录保持准确</a></h3><p class="caserow-problem">供应商的价格、图片和库存，和一个 64,000 件商品的网站越来越对不上。</p></div><div class="caserow-result"><p class="caserow-num">386 / 386</p><p class="caserow-label">条改价写入后逐条核对，全部正确</p></div><div class="caserow-ev"><span class="ev ev-measured">实测</span></div><span class="go" aria-hidden="true">→</span></li><li class="caserow"><span class="caserow-no">02</span><div class="caserow-main"><p class="caserow-kind">POS 迁移</p><h3><a class="stretch" href="/zh/cases/pos-to-square-migration/">从老 POS 迁移到 Square</a></h3><p class="caserow-problem">老 POS 连着整个后台：订单跟进、配送、采购和提成都靠它的数据。</p></div><div class="caserow-result"><p class="caserow-num">66,000+</p><p class="caserow-label">件商品在老 POS 里；迁移工具已完成空跑</p></div><div class="caserow-ev"><span class="ev ev-progress">进行中</span></div><span class="go" aria-hidden="true">→</span></li><li class="caserow"><span class="caserow-no">03</span><div class="caserow-main"><p class="caserow-kind">老旧软件</p><h3><a class="stretch" href="/zh/cases/legacy-software-automation/">老旧桌面软件自动录入</a></h3><p class="caserow-problem">商品和收货数据要手工录入一套换不掉的桌面软件。</p></div><div class="caserow-result"><p class="caserow-num">21,531</p><p class="caserow-label">条商品记录，无需手工输入</p></div><div class="caserow-ev"><span class="ev ev-measured">实测</span></div><span class="go" aria-hidden="true">→</span></li><li class="caserow"><span class="caserow-no">04</span><div class="caserow-main"><p class="caserow-kind">订单与采购</p><h3><a class="stretch" href="/zh/cases/order-supply-workflow/">重新打通销售和采购</a></h3><p class="caserow-problem">同一份订单信息，在销售和采购之间反复录入、反复整理。</p></div><div class="caserow-result"><p class="caserow-num">≈ 67.7 小时</p><p class="caserow-label">每月减少的手工操作</p></div><div class="caserow-ev"><span class="ev ev-estimate">运营估算</span></div><span class="go" aria-hidden="true">→</span></li><li class="caserow"><span class="caserow-no">05</span><div class="caserow-main"><p class="caserow-kind">价格与库存查询</p><h3><a class="stretch" href="/zh/cases/price-inventory-lookup/">价格和库存一次查到</a></h3><p class="caserow-problem">员工要分别去翻供应商价表、内部库存和供应商库存。</p></div><div class="caserow-result"><p class="caserow-num">≈ 40,000</p><p class="caserow-label">件商品一次查到；每月 2,000 次以上</p></div><div class="caserow-ev"><span class="ev ev-estimate">运营估算</span></div><span class="go" aria-hidden="true">→</span></li><li class="caserow"><span class="caserow-no">06</span><div class="caserow-main"><p class="caserow-kind">展厅</p><h3><a class="stretch" href="/zh/cases/sample-tracking/">展厅样品追踪</a></h3><p class="caserow-problem">一件展厅样品在哪、装没装，全靠记忆和到处找。</p></div><div class="caserow-result"><p class="caserow-num">5 分钟 → 30 秒</p><p class="caserow-label">找到一件样品</p></div><div class="caserow-ev"><span class="ev ev-estimate">运营估算</span></div><span class="go" aria-hidden="true">→</span></li><li class="caserow"><span class="caserow-no">07</span><div class="caserow-main"><p class="caserow-kind">供应商文件</p><h3><a class="stretch" href="/zh/cases/supplier-data-structuring/">把供应商文件变成结构化商品数据</a></h3><p class="caserow-problem">发票、价表和规格资料以各种格式的 PDF 和表格发来，全靠人手工重录、逐条核对。</p></div><div class="caserow-result"><p class="caserow-num">44 / 45</p><p class="caserow-label">个型号在约 6,500 条记录中匹配成功；10 个不确定的匹配交人复核</p></div><div class="caserow-ev"><span class="ev ev-tested">已测试</span></div><span class="go" aria-hidden="true">→</span></li></ol>
-    <p class="more"><a href="/zh/cases/zeror-ca/">另见：从零搭建——zeror.ca <span aria-hidden="true">→</span></a></p>
-  </div>
-</section>
-
-<section class="section section-ink" id="ai-layer">
-  <div class="wrap two-col">
-    <div class="col-text">
-      <p class="eyebrow">项目进展</p>
-      <h2>哪些已经在用，哪些还在测试</h2>
-      <p class="big">有些流程已经在生产中运行，有些已在真实数据上测试、还没进入日常使用，还有少数只是设计。我们会标清楚哪个是哪个。</p>
-      <p><a class="btn btn-invert" href="/zh/ai-operations/">查看完整状态 <span aria-hidden="true">→</span></a></p>
-    </div>
-    <ul class="board">
-      <li><span class="ev ev-production">已上线</span><span>网站商品目录流程 · 图片流程 · 老旧软件录入 · 价格与库存查询</span></li>
-      <li><span class="ev ev-tested">已测试</span><span>发票结构化 · SKU 匹配 · 规格补全</span></li>
-      <li><span class="ev ev-progress">进行中</span><span>老 POS → Square 迁移</span></li>
-      <li><span class="ev ev-designed">已设计</span><span>供应商变更侦测 · 商品目录定时更新</span></li>
-    </ul>
-  </div>
-</section>
-
-<section class="section" id="existing">
-  <div class="wrap two-col">
-    <div class="col-text">
-      <p class="eyebrow">现有系统</p>
-      <h2>先看现有软件能做到什么</h2>
-      <p>我们通常先改进你现有的 ERP、POS、SaaS、网站、表格、老旧桌面软件和供应商系统周边的流程。</p>
-      <p>当运营模式已经超出核心系统的能力，我们帮你切换——同时不丢掉让旧系统运转起来的业务规则、数据和习惯。</p>
-    </div>
-    <p class="statement">有时补一个小工具就够了，有时需要更换核心系统。先弄清原因，再决定怎么改。</p>
-  </div>
-</section>
-
-<section class="section section-tint" id="judgment">
-  <div class="wrap">
-    <header class="section-head">
-      <p class="eyebrow">人与系统</p>
-      <h2>说清楚哪些地方需要人复核</h2>
-      <p class="section-intro">工具可以整理数据、执行约定好的规则。定价、采购和不确定的匹配结果，需要明确由谁复核或批准。</p>
-    </header>
-    <div class="split-duty"><div class="duty duty-system"><p class="duty-head">系统负责</p><ul><li>收集、搬运、整理和转换数据</li><li>匹配、查询和汇总</li><li>重复录入和批量更新</li><li>执行规则和核对</li><li>草稿、诊断和建议</li></ul></div><div class="duty duty-human"><p class="duty-head">人来决定</p><ul><li>模糊不清的情况</li><li>业务例外和审批</li><li>定价和采购决策</li><li>针对特定客户的情况</li><li>最终责任</li></ul></div></div>
-    <p class="tech">根据具体工作，我们会用 API、脚本、文件识别或内部网页工具。AI 可以帮助读文件、提出匹配建议；价格和采购由人批准。</p>
-  </div>
-</section>
-
-<section class="cta-band"><div class="wrap cta-inner"><h2>哪项工作最花时间？</h2><div class="cta-body"><p>说说团队现在怎么做，用哪些软件和文件。我们一起看看，哪些地方可以通过工具或调整做法来改善。</p><a class="btn btn-invert" href="/zh/contact/">聊聊你的项目 <span aria-hidden="true">→</span></a></div></div></section>
-
+<nav class="home-route wrap" aria-label="首页内容导航"><a href="#stage-0"><span>01</span>找到问题<b aria-hidden="true">↓</b></a><a href="#stage-3"><span>02</span>确定改法<b aria-hidden="true">↓</b></a><a href="#stage-7"><span>03</span>依据与行动<b aria-hidden="true">↓</b></a></nav><section class="section route-group" id="stage-0"><div class="wrap"><header class="section-head"><p class="eyebrow">01 · 找到问题</p><h2>先看，工作卡在哪里</h2></header><div class="primary-grid"><a class="primary-entry" data-topic="problems" href="/zh/operations/problems/"><span class="card-top"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4M9 9l6 6m0-6-6 6"/></svg></span><span class="entry-label">问题</span></span><h3>哪些工作还在反复手工处理</h3><p>找到最耗时间、最容易出错的环节。</p><span class="entry-go">展开查看 <span class="card-arrow" aria-hidden="true">↗</span></span></a><a class="primary-entry" data-topic="who" href="/zh/operations/who/"><span class="card-top"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6m2 3a5 5 0 0 1 3 5"/></svg></span><span class="entry-label">适合谁</span></span><h3>哪些团队适合从这里开始</h3><p>从商品、订单、供应商和人员协作，看是否适合你的业务。</p><span class="entry-go">展开查看 <span class="card-arrow" aria-hidden="true">↗</span></span></a><a class="primary-entry" data-topic="existing" href="/zh/operations/existing/"><span class="card-top"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 21h8m-4-5v5M7 8h4m-4 4h10"/></svg></span><span class="entry-label">现有系统</span></span><h3>先别急着换系统</h3><p>先看现有软件能继续用到哪一步，再决定补工具还是换系统。</p><span class="entry-go">展开查看 <span class="card-arrow" aria-hidden="true">↗</span></span></a></div></div></section><section class="section route-group" id="stage-3"><div class="wrap"><header class="section-head"><p class="eyebrow">02 · 确定改法</p><h2>再看，怎么改、谁来做</h2></header><div class="primary-grid"><a class="primary-entry" data-topic="workflow-reconstruction" href="/zh/operations/workflow-reconstruction/"><span class="card-top"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><path d="M9 6h9v9M6 9v9h9"/></svg></span><span class="entry-label">从这里开始</span></span><h3>先把一项工作，从头到尾做好</h3><p>选一项反复做的工作，确定改善目标，再做好并验证。</p><span class="entry-go">展开查看 <span class="card-arrow" aria-hidden="true">↗</span></span></a><a class="primary-entry" data-topic="services" href="/zh/operations/services/"><span class="card-top"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 17h7m-3-3v7"/></svg></span><span class="entry-label">解决方案</span></span><h3>六种方式，把断点接起来</h3><p>流程、商品目录、数据、系统切换、内部工具和 AI 辅助。</p><span class="entry-go">展开查看 <span class="card-arrow" aria-hidden="true">↗</span></span></a><a class="primary-entry" data-topic="method" href="/zh/operations/method/"><span class="card-top"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5h13M8 12h13M8 19h13M3 5h1M3 12h1M3 19h1"/></svg></span><span class="entry-label">实施方法</span></span><h3>五个步骤，先测再上线</h3><p>了解现状、小范围试做、核对结果，再交给团队使用。</p><span class="entry-go">展开查看 <span class="card-arrow" aria-hidden="true">↗</span></span></a><a class="primary-entry" data-topic="judgment" href="/zh/operations/judgment/"><span class="card-top"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4v6c0 5-8 8-8 8s-8-3-8-8V7zM8 12l3 3 5-6"/></svg></span><span class="entry-label">人和系统</span></span><h3>重复的交给系统，拍板的留给人</h3><p>哪些可以由工具执行，哪些仍需由人复核和批准。</p><span class="entry-go">展开查看 <span class="card-arrow" aria-hidden="true">↗</span></span></a></div></div></section><section class="section route-group" id="stage-7"><div class="wrap"><header class="section-head"><p class="eyebrow">03 · 依据与行动</p><h2>看过依据，再决定从哪里开始</h2></header><div class="primary-grid"><a class="primary-entry" data-topic="cases" href="/zh/operations/cases/"><span class="card-top"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16M6 16V9m6 7V4m6 12v-5"/></svg></span><span class="entry-label">真实案例</span></span><h3>真问题，真数字</h3><p>同一家企业的七个项目，逐项说明结果和限制。</p><span class="entry-go">展开查看 <span class="card-arrow" aria-hidden="true">↗</span></span></a><a class="primary-entry" data-topic="ai-layer" href="/zh/operations/ai-layer/"><span class="card-top"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg></span><span class="entry-label">项目进展</span></span><h3>哪些在跑，哪些还没有</h3><p>已投入使用、已测试、进行中和设计中，分别说明。</p><span class="entry-go">展开查看 <span class="card-arrow" aria-hidden="true">↗</span></span></a><a class="primary-entry" data-topic="contact" href="/zh/contact/"><span class="card-top"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v12H9l-5 4zM8 8h8m-8 4h5"/></svg></span><span class="entry-label">下一步</span></span><h3>把最耗时间的那件事交给我们</h3><p>说一项工作、用到的文件，以及你希望改善的结果。</p><span class="entry-go">展开查看 <span class="card-arrow" aria-hidden="true">↗</span></span></a></div></div></section>
 </main>
 <footer class="site-footer">
   <div class="wrap footer-grid">

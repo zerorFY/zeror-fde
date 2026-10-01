@@ -783,3 +783,105 @@ table:not(.split-table) th:first-child { width: 34%; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Local hierarchy review: prominent guidance, then primary entries. */
+.kind-home .hierarchy-hero { padding-block: 28px; max-width: 1060px; margin-left: 0; }
+.kind-home .hero { padding-bottom: 28px; }
+.kind-home .hero-copy { max-width: 940px; }
+.kind-home .display { max-width: 18ch; }
+.kind-home .eyebrow, .kind-overview .eyebrow { font-size: 22px; font-weight: 700; letter-spacing: 0; }
+.kind-home .eyebrow::before, .kind-overview .eyebrow::before { width: 12px; height: 12px; }
+.home-route { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; padding-block: 26px; }
+.home-route a { display: flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; font-size: 20px; font-weight: 650; border-bottom: 2px solid var(--cobalt); padding-block: 16px; }
+.home-route span { color: var(--cobalt); font-family: var(--f-mono); }
+.home-route b { margin-left: auto; }
+.route-group { padding-block: 58px; scroll-margin-top: 90px; }
+.route-group:nth-of-type(even) { background: var(--paper-2); }
+.route-group .section-head { margin-bottom: 28px; }
+.primary-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+.primary-entry { display: flex; flex-direction: column; padding: 28px; border: 1px solid var(--rule); border-top: 4px solid var(--cobalt); border-radius: 6px; background: var(--card); color: var(--ink); text-decoration: none; transition: border-color .15s, transform .15s; }
+.primary-entry:hover { border-color: var(--cobalt); transform: translateY(-3px); }
+.primary-entry:focus-visible, .home-route a:focus-visible { outline: 3px solid var(--cobalt); outline-offset: 5px; }
+.entry-label { font-size: 21px; font-weight: 700; color: var(--cobalt); margin-bottom: 16px; }
+.primary-entry h3 { font-size: clamp(25px,2.6vw,34px); line-height: 1.35; margin-bottom: 16px; font-weight: 750; }
+.primary-entry p { color: var(--ink-2); font-size: 18px; margin-bottom: 22px; }
+.entry-go { margin-top: auto; color: var(--cobalt); font-weight: 650; font-size: 17px; }
+.detail-return { margin-bottom: 32px; }
+.detail-return a { font-size: 18px; font-weight: 650; }
+.kind-overview .page-body > .wrap { padding-inline: 0; }
+.kind-overview .solution-link { margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--rule); }
+.solution-link strong { display: block; color: var(--cobalt); font-size: 17px; margin-bottom: 8px; }
+.solution-link a { font-size: 17px; }
+.kind-overview .product-grid h3 { color: var(--on-inverse); }
+.kind-overview .product-grid p { color: var(--inverse-muted); }
+.kind-overview .product-grid .label { color: var(--inverse-accent); }
+.kind-overview .product-grid ~ .actions .btn-quiet { color: var(--ink); border-color: var(--rule); }
+@media(max-width:760px) {
+  .primary-grid, .home-route { grid-template-columns: minmax(0,1fr); }
+  .home-route { gap: 0; padding-block: 12px; }
+  .home-route a { font-size: 18px; padding-block: 12px; }
+  .primary-entry { padding: 22px; }
+  .route-group { padding-block: 40px; }
+  .kind-home .eyebrow, .kind-overview .eyebrow { font-size: 20px; }
+}
+
+/* Owner revision R2: compact cards with distinct surfaces and visual hierarchy. */
+.kind-home { --paper: #f4f6fa; --paper-2: #f4f6fa; --card: #fff; --ink: #182338; --ink-2: #4d5b70; --muted: #637087; --rule: #e1e6ef; --cobalt: #3456d4; color-scheme: light; }
+.kind-home .hero { padding-top: 28px; }
+.kind-home .hierarchy-hero { max-width: 1180px; margin-inline: auto; padding: 46px 48px; background: var(--card); border: 1px solid var(--rule); border-radius: 28px; box-shadow: 0 12px 40px #20396108; }
+.kind-home .display { font-size: clamp(40px,4.7vw,68px); line-height: 1.14; max-width: 20ch; margin-block: 18px; }
+.kind-home .hero .eyebrow { font-size: 18px; }
+.kind-home .hero .lede { font-size: 20px; max-width: 38em; }
+.kind-home .hero .lede-2 { font-size: 15px; }
+.kind-home .btn { border-radius: 12px; }
+.kind-home .ledger { gap: 14px; border: 0; margin-top: 22px; }
+.kind-home .ledger > div, .kind-home .ledger > div + div { padding: 20px; background: #fff; border: 1px solid var(--rule); border-radius: 18px; }
+.kind-home .ledger-num { font-size: clamp(24px,2.5vw,36px); }
+.kind-home .ledger-label { font-size: 14px; }
+.kind-home .ledger-note { font-size: 12px; }
+.home-route { padding-block: 8px 28px; gap: 12px; }
+.home-route a { background: #e8edf9; border: 0; padding: 16px 20px; border-radius: 14px; font-size: 18px; }
+.route-group, .route-group:nth-of-type(even) { background: transparent; padding-block: 22px 30px; }
+.route-group .section-head { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 18px; }
+.route-group .section-head h2 { font-size: 20px; font-weight: 500; color: var(--muted); margin: 0; }
+.route-group .section-head .eyebrow { font-size: 22px; margin: 0; }
+.route-group .eyebrow::before { display: none; }
+.primary-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
+#stage-3 .primary-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.primary-entry { border: 1px solid #dfe5ef; border-radius: 22px; padding: 26px; min-height: 275px; box-shadow: 0 6px 22px #1a345908; }
+.primary-entry:hover { transform: translateY(-5px); box-shadow: 0 14px 30px #26478716; }
+.card-top { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; }
+.card-icon { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 14px; background: #edf1ff; color: #3456d4; flex-shrink: 0; }
+.card-icon svg { width: 25px; height: 25px; }
+.entry-label { font-size: 21px; margin: 0; color: var(--ink); }
+.primary-entry h3 { font-size: 25px; line-height: 1.4; margin-bottom: 12px; }
+.primary-entry p { font-size: 16px; line-height: 1.7; margin-bottom: 22px; }
+.entry-go { display: flex; align-items: center; justify-content: space-between; font-size: 15px; padding-top: 16px; border-top: 1px solid #edf0f5; }
+.card-arrow { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: #edf1ff; font-size: 19px; }
+.primary-entry[data-topic="workflow-reconstruction"] { background: #243e8c; color: #fff; border-color: #243e8c; }
+.primary-entry[data-topic="workflow-reconstruction"] h3, .primary-entry[data-topic="workflow-reconstruction"] .entry-label, .primary-entry[data-topic="workflow-reconstruction"] .entry-go { color: #fff; }
+.primary-entry[data-topic="workflow-reconstruction"] p { color: #d3def5; }
+.primary-entry[data-topic="workflow-reconstruction"] .entry-go { border-color: #ffffff25; }
+.primary-entry[data-topic="workflow-reconstruction"] .card-icon, .primary-entry[data-topic="workflow-reconstruction"] .card-arrow { background: #ffffff18; color: #fff; }
+.primary-entry[data-topic="cases"] .card-icon { background: #e5f5f0; color: #176955; }
+.primary-entry[data-topic="contact"] { background: #edf1ff; }
+.kind-overview .breaks { gap: 20px; }
+.kind-overview .breaks article { background: var(--card); border: 1px solid var(--rule); border-radius: 20px; padding: 26px; box-shadow: 0 8px 24px #172c4e08; }
+@media(max-width:1000px) { .primary-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media(max-width:760px) {
+  .kind-home .hierarchy-hero { width: calc(100% - 32px); margin-inline: 16px; padding: 28px 22px; border-radius: 22px; }
+  .kind-home .hero .lede { font-size: 17px; }
+  .kind-home .display { font-size: 34px; }
+  .kind-home .ledger { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .kind-home .ledger > div { padding: 14px; }
+  .kind-home .ledger-num { font-size: 22px; white-space: normal; overflow-wrap: anywhere; }
+  .kind-home .ledger-label { font-size: 12px; }
+  .home-route { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; }
+  .home-route a { padding: 12px 8px; font-size: 14px; gap: 5px; flex-wrap: wrap; }
+  .home-route b { display: none; }
+  .route-group .section-head { display: block; }
+  .route-group .section-head h2 { font-size: 16px; margin-top: 8px; }
+  .primary-grid, #stage-3 .primary-grid { grid-template-columns: minmax(0,1fr); }
+  .primary-entry { min-height: 0; padding: 24px; }
+  .primary-entry h3 { font-size: 24px; }
+}
