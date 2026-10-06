@@ -1,6 +1,6 @@
 # Zeror
 
-> Zeror helps businesses reduce repeat data entry, keep information consistent and improve work between their existing systems. Based in Canada. This product site is hosted at https://fde.zeror.ca; Zeror's main domain remains https://zeror.ca.
+> Zeror helps businesses reduce repeat data entry, keep information consistent and improve work between their existing systems. Based in Canada. This product site is hosted at https://fde.zeror.ca.
 
 ## Start here: Workflow Reconstruction
 - [Workflow Reconstruction](https://fde.zeror.ca/services/workflow-reconstruction/): Improve one recurring business task. Zeror works through the current process with staff, builds the tools it needs and tests the results against source records. Staff review uncertain results and approve business changes.
